@@ -10,6 +10,6 @@ module.exports = function (configObj) {
   return new Promise((resolve) => {
     console.log("Running before_app_typescript hook.");
     //const { tsconfigJson } = configObj.typescript;
-    resolve(configObj);
+    // resolve(configObj);
   });
 };

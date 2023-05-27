@@ -72,7 +72,7 @@ export const Header = (props: Props) => {
   };
 
   return (
-    <header role="banner" class="oj-web-applayout-header">
+    <header role="banner" class="oj-web-applayout-header oj-applayout-fixed-top">
       <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
         <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
           <span

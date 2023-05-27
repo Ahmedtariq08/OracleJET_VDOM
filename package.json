@@ -1,7 +1,7 @@
 {
-  "name": "vdom_training",
-  "version": "1.0.0",
-  "description": "Oracle JET sample app for Virtual DOM (VDOM) architecture",
+  "name": "egnc_frontend",
+  "version": "2.0.0",
+  "description": "EGnC frontend refactoring and optimization to Virtual DOM (VDOM) architecture",
   "dependencies": {
     "@oracle/oraclejet": "~14.1.0",
     "@oracle/oraclejet-core-pack": "~14.1.0",
