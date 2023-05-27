@@ -1,0 +1,2 @@
+export const LOADING = 'LOADING';
+export const SMELTER_REPORT_DATA = 'SMELTER_REPORT_DATA';

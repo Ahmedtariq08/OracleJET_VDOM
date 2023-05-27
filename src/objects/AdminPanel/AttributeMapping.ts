@@ -3,8 +3,8 @@ export class Attribute {
     public name: string;
     public wfid: number[];
     public type: string 
-    public readonly: boolean;
-    public required: boolean;
+    public readonly: boolean | undefined;
+    public required: boolean | undefined;
     public possibleValues: string[];
 
     constructor () { this.name = ""; this.wfid = []; this.type = ""; this.readonly = undefined; 

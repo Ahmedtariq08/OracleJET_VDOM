@@ -26,7 +26,8 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "removeComments": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false
   },
   "include": ["./src/**/*"]
 }
