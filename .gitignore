@@ -1,0 +1,10 @@
+/node_modules/**
+/web/**
+/.vscode
+egnc-frontend.war
+/.idea
+.DS_Store
+Thumbs.db
+EGnC_V2_Frontend.iml
+/staged-themes/**
+tests/summary.json

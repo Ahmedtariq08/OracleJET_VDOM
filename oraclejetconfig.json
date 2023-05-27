@@ -1,0 +1,28 @@
+{
+  "paths": {
+    "source": {
+      "common": "src",
+      "web": "src-web",
+      "hybrid": "src-hybrid",
+      "javascript": ".",
+      "typescript": ".",
+      "styles": "styles",
+      "themes": "themes",
+      "components": "components",
+      "exchangeComponents": "exchange_components"
+    },
+    "staging": {
+      "web": "web",
+      "hybrid": "hybrid",
+      "themes": "staged-themes"
+    }
+  },
+  "defaultBrowser": "chrome",
+  "sassVer": "7.0.0",
+  "defaultTheme": "redwood",
+  "architecture": "vdom",
+  "generatorVersion": "14.1.0",
+  "bundler": "webpack",
+  "bundleName": "bundle.js",
+  "watchInterval": 1000
+}
