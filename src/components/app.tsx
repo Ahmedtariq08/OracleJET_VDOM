@@ -1,5 +1,4 @@
 import { Header } from "./header";
-import Footer from "./footer";
 import Content from "./content/index";
 import { registerCustomElement } from "ojs/ojvcomponent";
 import { h } from "preact";
@@ -86,3 +85,13 @@ export const App = registerCustomElement("app-root", (props: Props) => {
     </div>
   );
 });
+
+const Footer = () => {
+  return (
+    <footer class="oj-web-applayout-footer oj-applayout-fixed-bottom" role="contentinfo">
+      <div class=" oj-bg-neutral-170 oj-color-invert oj-sm-padding-3x oj-sm-margin-12x-top" style="text-align: center;"> 
+        <span>@2023 GoSaaS, Inc. Version: R23A</span>
+      </div>
+    </footer>
+  );
+};

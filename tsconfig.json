@@ -25,7 +25,8 @@
     "noEmitOnError": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
-    "removeComments": true
+    "removeComments": true,
+    "strictPropertyInitialization": false
   },
   "include": ["./src/**/*"]
 }
