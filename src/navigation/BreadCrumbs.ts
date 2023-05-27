@@ -11,7 +11,7 @@ class BreadCrumb {
     redirection: redirection;
    
     constructor (redirection: redirection) {
-        this.entry = getPageEntry(redirection);
+        this.entry = getPageEntry(redirection) ?? "";
         this.link = getHref(redirection.page, redirection.params);
         this.redirection = redirection;
     }
@@ -19,7 +19,7 @@ class BreadCrumb {
 
 export const processBreadCrumbs = (pageToBeProcessed: redirection) => {
     if(pageToBeProcessed.page == PAGES.DASHBOARD){emptyBreadCrumbs();}
-    let sessionBreadCrumbs: BreadCrumb[] = JSON.parse(sessionStorage.getItem(sessionEntry));
+    let sessionBreadCrumbs: BreadCrumb[] = JSON.parse(sessionStorage.getItem(sessionEntry) ?? "[]");
     let breadCrumbsArray: BreadCrumb[] = (sessionBreadCrumbs) ? sessionBreadCrumbs : [new BreadCrumb({page: PAGES.DASHBOARD})];
     if (isSideBarPage(pageToBeProcessed.page)){
         if (breadCrumbsArray.length > 1){breadCrumbsArray.splice(1);}
@@ -33,7 +33,7 @@ export const processBreadCrumbs = (pageToBeProcessed: redirection) => {
 
 //Removes particular breadcrumb and following entries
 export const removeBreadCrumb = (pageToBeProcessed: redirection) => {
-    let sessionBreadCrumbs: BreadCrumb[] = JSON.parse(sessionStorage.getItem(sessionEntry));
+    let sessionBreadCrumbs: BreadCrumb[] = JSON.parse(sessionStorage.getItem(sessionEntry) ?? "[]");
     const index = sessionBreadCrumbs.findIndex(breadCrumb => {
         return breadCrumb.redirection.page === pageToBeProcessed.page &&
             JSON.stringify(breadCrumb.redirection.params) === JSON.stringify(pageToBeProcessed.params)});
@@ -44,7 +44,7 @@ export const removeBreadCrumb = (pageToBeProcessed: redirection) => {
 
 //Return true if breadcrumb clicked is the current page
 export const samePageClicked = (breadCrumb: BreadCrumb) : boolean => {
-    let sessionBreadCrumbs: BreadCrumb[] = JSON.parse(sessionStorage.getItem(sessionEntry));
+    let sessionBreadCrumbs: BreadCrumb[] = JSON.parse(sessionStorage.getItem(sessionEntry)  ?? "[]");
     return getPageIndex(sessionBreadCrumbs, breadCrumb.redirection) == (sessionBreadCrumbs.length - 1);
 }
 
@@ -81,20 +81,26 @@ const getPageIndex = (breadCrumbsArray: BreadCrumb[], pageToBeProcessed: redirec
 
 const getPageEntry = (pageToBeProcessed: redirection) => {
     let pageSettings = settings.get(pageToBeProcessed.page);
-    let entry = pageSettings.displayName;
-    for (let i = 0; i < pageSettings.displayParams.length; i++){
-        if (i > 0){entry = entry.concat(entrySeperator);}
-        let param = pageSettings[pageSettings.displayParams[i]];
-        let pageParams = pageToBeProcessed.params;
-        if (Array.isArray(param)){
-            param.forEach(p => {
-                if (pageParams[p]){
-                    entry = entry.concat(pageParams[p]);
+    if (pageSettings) {
+        let entry = pageSettings.displayName;
+        for (let i = 0; i < pageSettings.displayParams.length; i++){
+            if (i > 0){entry = entry.concat(entrySeperator);}
+            let param = pageSettings[pageSettings.displayParams[i]];
+            let pageParams = pageToBeProcessed.params;
+            if (Array.isArray(param)){
+                param.forEach(p => {
+                    if (pageParams && pageParams[p]){
+                        entry = entry.concat(pageParams[p]);
+                    }
+                })
+            } else {
+                if (pageToBeProcessed && pageToBeProcessed.params) {
+                    entry = entry.concat(pageToBeProcessed.params[param]);  
                 }
-            })
-        } else {entry = entry.concat(pageToBeProcessed.params[param]);}
+            }
+        }
+        return entry;
     }
-    return entry;
 }
 
 //If page has order property

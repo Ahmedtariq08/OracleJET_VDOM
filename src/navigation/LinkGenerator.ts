@@ -26,10 +26,10 @@ export const generateHref = (page: string, id?: string, number?: string, params?
   } else {
     let pageSetting = settings.get(page);
     let map: Map<string, string> = new Map<string, string>();
-    if (pageSetting.id && !Array.isArray(pageSetting.id) && id){
+    if (pageSetting?.id && !Array.isArray(pageSetting.id) && id){
       map.set(pageSetting.id, id);
     }
-    if (pageSetting.number && !Array.isArray(pageSetting.number) && number){
+    if (pageSetting?.number && !Array.isArray(pageSetting.number) && number){
       map.set(pageSetting.number, number);
     }
     link = getHref(page, Object.fromEntries(map));
