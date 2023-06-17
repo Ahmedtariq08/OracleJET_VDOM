@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es6",
-    "strict": true,
+    "strict": false,
     "module": "amd",
     "moduleResolution": "node",
     "jsx": "react-jsx",
