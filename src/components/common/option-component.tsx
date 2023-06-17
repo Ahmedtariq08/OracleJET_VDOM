@@ -1,4 +1,4 @@
-import { Icons } from "../../../json/JsonHandler";
+import { Icons } from "../../json/JsonHandler";
 
 export type OptionProps = {
   icon?: string;

@@ -1,10 +1,12 @@
-import { LoaderCircle } from "../../common/loader-circle/loader-circle";
+import "ojs/ojinputtext";
+import "ojs/ojmessages"
+import { LoaderCircle } from "../../common/loader-circle";
 import AsyncLengthValidator from "ojs/ojasyncvalidator-length";
 import { useEffect, useState } from "preact/hooks";
 import { PAGES } from "../../../navigation/Constants";
 import { Message } from  "../../../utils/generic/Message";
 import authenticationService from "../../../service/auth/AuthenticationService";
-import { ButtonComponent } from "../../common/button-component/button-component";
+import { ButtonComponent } from "../../common/button-component";
 // import Store from "../../../redux/store";
 // import { resetStore } from "../../../redux/actions/root";
 import { clearUserPermissionsFromStorage } from "../../../service/auth/Permissions";
@@ -88,7 +90,7 @@ export const LoginView = (props: {redirectToPage: (page: string) => void}) => {
         return (
             <footer class="oj-web-applayout-footer">
                 <div class="foot">
-                    <div class="Ologo"> <img class="logo" src="css/images/gosaas-logo.png" /> </div>
+                    <div class="Ologo"> <img class="logo" src="styles/images/gosaas-logo.png" /> </div>
                 </div>
                 <div class="copyright" id="copyright"> Copyright(C) 2017, 2022, GoSaaS and/or its affiliates. </div>
             </footer>

@@ -1,6 +1,7 @@
 import { Header } from "./header";
 import Footer from "./footer";
 import Content from "./content/index";
+import { LoginView } from "./views/login/login";
 import { registerCustomElement } from "ojs/ojvcomponent";
 import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
@@ -72,9 +73,14 @@ export const App = registerCustomElement("app-root", (props: Props) => {
     setRoutePath(newPath);
   };
 
+  const redirection = (page: string) => {
+    console.log(page);
+  }
+
   return (
     <div id="appContainer" class="oj-web-applayout-page">
-      <Header
+      <LoginView redirectToPage={redirection}/>
+      {/* <Header
         appName={props.appName}
         page={routePath}
         onPageChanged={pageChangeHandler}
@@ -82,7 +88,7 @@ export const App = registerCustomElement("app-root", (props: Props) => {
         routes={routeArray}
       />
       <Content page={routePath} />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 });

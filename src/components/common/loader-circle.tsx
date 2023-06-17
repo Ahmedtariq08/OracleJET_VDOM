@@ -1,4 +1,7 @@
-import { Constants } from "../../../json/JsonHandler";
+import "ojs/ojlabelvalue"
+import "ojs/ojprogress-circle"
+import { Constants } from "../../json/JsonHandler";
+
 type Props = {
   loaderText?: string;
 }

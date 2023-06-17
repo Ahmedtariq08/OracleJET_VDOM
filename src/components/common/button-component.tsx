@@ -1,3 +1,4 @@
+import "ojs/ojbutton";
 export type ButtonProps = {
   buttonTitle: string;
   icon?: string;
