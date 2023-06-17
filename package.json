@@ -6,6 +6,7 @@
     "@oracle/oraclejet": "~14.1.0",
     "@oracle/oraclejet-core-pack": "~14.1.0",
     "@oracle/oraclejet-preact": "~14.1.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "preact-router": "~4.0.1",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
@@ -22,13 +23,13 @@
     "extract-zip": "^1.7.0",
     "fs-extra": "^8.1.0",
     "glob": "7.2.0",
-    "typescript": "4.8.4",
-    "underscore": "^1.10.2",
-    "yargs-parser": "13.1.2",
     "jest": "^29.5.0",
     "jest-extended": "^3.2.4",
     "msw": "^1.2.1",
-    "ts-jest": "^29.1.0"
+    "ts-jest": "^29.1.0",
+    "typescript": "4.8.4",
+    "underscore": "^1.10.2",
+    "yargs-parser": "13.1.2"
   },
   "engines": {
     "node": ">=14.0.0"

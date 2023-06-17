@@ -7,6 +7,8 @@ import { PAGES } from "../../../navigation/Constants";
 import { Message } from  "../../../utils/generic/Message";
 import authenticationService from "../../../service/auth/AuthenticationService";
 import { ButtonComponent } from "../../common/button-component";
+import { Store } from "../../../redux-toolkit/store";
+import { setUserDetails } from "../../../redux-toolkit/reducer/login";
 // import Store from "../../../redux/store";
 // import { resetStore } from "../../../redux/actions/root";
 import { clearUserPermissionsFromStorage } from "../../../service/auth/Permissions";
@@ -28,6 +30,7 @@ export const LoginView = (props: {redirectToPage: (page: string) => void}) => {
 
     useEffect(() => {
         checkSignedIn();
+        Store.dispatch(setUserDetails({username: "Ahmed", password: "1234"}));
     }, []);
 
     const SSOSignIn = async () => {
@@ -50,6 +53,8 @@ export const LoginView = (props: {redirectToPage: (page: string) => void}) => {
     };
 
     const signIn = async () => {
+        let reducer = Store.getState().login;
+        console.log(reducer.userDetails);
         if (userName && password) {
             setShowLoader(true);
             let response = await AuthenticationService.loginUser(userName, password);

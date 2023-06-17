@@ -46,7 +46,11 @@
         preact: "libs/preact/dist/preact.umd",
         proj4: "libs/proj4js/dist/proj4-src",
         touchr: "libs/touchr/touchr",
-        chai: "libs/chai/chai-4.2.0"
+        chai: "libs/chai/chai-4.2.0",
+        'redux': 'libs/redux/redux',
+        'redux-thunk': 'libs/redux-thunk/redux-thunk',
+        'redux-logger': 'libs/redux-logger/redux-logger',
+        'react-redux': 'libs/react-redux/react-redux',
       }
     // endinjector
     
