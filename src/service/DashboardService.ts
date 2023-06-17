@@ -1,7 +1,7 @@
 import RestUtil from "../utils/rest/RestUtil";
 import { Config, APIs, Constants } from "../json/JsonHandler";
 import { generateHref, PAGES, navData} from "../navigation/NavigationHandler";
-import { getUserId, getRoles, isAdmin, isManager, isSupplier } from "./Auth/Permissions";
+import { getUserId, getRoles, isAdmin, isManager, isSupplier } from "./auth/Permissions";
 import { roleToPageMapping } from "../navigation/Constants";
 
 const RestUtils = new RestUtil();
